@@ -51,4 +51,11 @@ jobs:
 
             sudo docker pull ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKER_IMAGE_TAG_NAME }}:latest
             sudo docker run -d -p 8080:8080 \
+                -e DATABASE_URL=${{ secrets.DATABASE_URL }} \
+                -e DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }} \
+                -e DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }} \
+                -e AWS_S3_BUCKET_NAME=${{ secrets.AWS_S3_BUCKET_NAME }} \
+                -e AWS_IAM_ACCESS_KEY=${{ secrets.AWS_IAM_ACCESS_KEY }} \
+                -e AWS_IAM_SECRET_KEY=${{ secrets.AWS_IAM_SECRET_KEY }} \
+                -e JWT_SECRET_KEY=${{ secrets.JWT_SECRET_KEY }} \
                 ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKER_IMAGE_TAG_NAME }}:latest
