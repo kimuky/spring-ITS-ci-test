@@ -33,7 +33,7 @@ class HallServiceTest1 {
 	// 	userService.signUp(new AuthRequest.SignUpDto("test@test.com", "asd!@#D23", "kim", "010-1111-2222", "USER"));
 	// }
 
-	@DisplayName("3")
+	@DisplayName("4")
 	@Test
 	void 테스트2() {
 		User byIdOrThrow = userRepository.findByIdOrThrow(2L);
