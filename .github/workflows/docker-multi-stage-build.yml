@@ -22,13 +22,16 @@ jobs:
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      - uses: mirromutth/mysql-action@v1.1
+      -
+        name: Shutdown Ubuntu MySQL (SUDO)
+        run: sudo service mysql stop
+      -
+        uses: mirromutth/mysql-action@v1.1
         with:
           host port: 3306
           container port: 3306
           mysql database: 'its'
           mysql root password: 12345
-
       -
         name: Build and push
         uses: docker/build-push-action@v6
