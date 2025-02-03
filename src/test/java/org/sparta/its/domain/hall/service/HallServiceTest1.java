@@ -25,7 +25,7 @@ class HallServiceTest1 {
 
 	@Autowired
 	private UserRepository userRepository;
-
+//ㅂㅈㄷㅂㅈㄷㅂ
 	// @DisplayName("테스트1")
 	// @Test
 	// void 테스트1() {
